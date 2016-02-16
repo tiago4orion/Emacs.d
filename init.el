@@ -28,12 +28,8 @@
 (load "spell-checking.el")
 (load "lisp-conf.el")
 (load "scheme-conf.el")
-(load "js-conf.el")
-(load "mu4e-conf.el")
-(load "w3m-conf.el")
 (load "sql-conf.el")
-(load "clojure.el")
-(load "ocaml.el")
+(load "ob-go.el")
 
 (setq custom-file (concat *my-conf* "custom.el"))
 (load custom-file 'noerror)
