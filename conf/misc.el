@@ -58,7 +58,7 @@
 (setq font-lock-maximum-decoration t)
 
 ;; Provide templates for new files
-(auto-insert-mode t)
+7(auto-insert-mode t)
 
 ;; put something different in the scratch buffer
 (setq initial-scratch-message
@@ -163,6 +163,6 @@ http://stackoverflow.com/questions/9304192/emacs-linum-mode-and-size-of-font-unr
 (advice-add #'linum-update-window :after #'linum-update-window-scale-fix)
 
 ;; initial buffer is agenda
-(add-hook 'after-init-hook (lambda ()
-                             (org-agenda t "n")
-                             (delete-other-windows)))
+;; (add-hook 'after-init-hook (lambda ()
+;;                              (org-agenda t "n")
+;;                              (delete-other-windows)))
