@@ -17,12 +17,12 @@
 
 (setq org-directory "~/org/")
 
-(setq org-agenda-files
-      '("~/org/refile.org"
-        ;; "~/org/personal/"
-        ;; work vs personal, uncomment/comment
-        "~/Projects/brickabode/org-issues/201602.org"
-        ))
+;; (setq org-agenda-files
+;;       '("~/org/refile.org"
+;;         ;; "~/org/personal/"
+;;         ;; work vs personal, uncomment/comment
+;;         "~/Projects/brickabode/org-issues/201602.org"
+;;         ))
 
 (setq org-tag-alist '((:startgroup)
                       ("@neoway" .    ?n)
@@ -85,7 +85,8 @@
    (js     . t)
    (ocaml  . t)
    (java   . t)
-   (C    . t)))
+   (C    . t)
+   (go . t)))
 
 ;;; disable confirmation of evaluation of code. CAREFUL WHEN EVALUATING
 ;;; FOREIGN ORG FILES!
