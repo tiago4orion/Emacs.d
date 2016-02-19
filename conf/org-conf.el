@@ -86,6 +86,7 @@
    (C    . t)
    (go . t)
    (makefile . t)
+   (sh . t)
    (scheme . t)))
 
 ;;; disable confirmation of evaluation of code. CAREFUL WHEN EVALUATING
@@ -96,6 +97,13 @@
 
 (add-to-list 'org-src-lang-modes '("dot" . graphviz-dot-mode))
 (setq org-ditaa-jar-path "/usr/share/java/ditaa/ditaa-0_9.jar")
+
+;;; Emacs and Latex disagree in the Makefile language name
+;;; Latex use "make" and Emacs "makefile" for mode.
+;;; This lines add a new makefile listing type to latex.
+(require 'ox-latex)
+(setq org-latex-listings-langs
+      (append org-latex-listings-langs '((makefile "make"))))
 
 
 ;;; subscripts

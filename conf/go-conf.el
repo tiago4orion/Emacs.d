@@ -7,7 +7,7 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
-(setenv "PATH" "/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/i4k/projects/personal/go/bin")
+(setenv "PATH" "/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/i4k/projects/personal/go/bin")
 (setenv "GOPATH" (expand-file-name "~/projects/go-workspace"))
 (setenv "GOROOT" (expand-file-name "~/projects/personal/go"))
 
