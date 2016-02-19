@@ -51,6 +51,7 @@
      ("\\.x?html?\\'" . default)
      ("\\.pdf\\'" . "evince %s"))))
  '(org-footnote-auto-label (quote confirm))
+ '(org-latex-listings t)
  '(org-modules
    (quote
     (org-bbdb org-bibtex org-crypt org-docview org-habit org-id org-info org-irc org-mhe org-rmail org-w3m)))
