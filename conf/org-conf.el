@@ -78,17 +78,21 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((dot    . t)
+   (ditaa . t)
    (python . t)
    (js     . t)
    (ocaml  . t)
    (java   . t)
    (C    . t)
    (go . t)
+   (makefile . t)
    (scheme . t)))
 
 ;;; disable confirmation of evaluation of code. CAREFUL WHEN EVALUATING
 ;;; FOREIGN ORG FILES!
 
 (setq org-confirm-babel-evaluate nil)
+(setq org-src-preserve-indentation t)
 
 (add-to-list 'org-src-lang-modes '("dot" . graphviz-dot-mode))
+(setq org-ditaa-jar-path "/usr/share/java/ditaa/ditaa-0_9.jar")
