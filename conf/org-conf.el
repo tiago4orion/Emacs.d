@@ -15,19 +15,19 @@
 (setq org-outline-path-complete-in-steps nil)
 (setq org-completion-use-ido t)
 
-(setq org-directory "~/org/")
+;; The following, as its dependent on absolute file paths, are commented out
 
-(setq org-tag-alist '((:startgroup)
-                      ("@neoway" .    ?n)
-                      ("@home" .      ?h)
-                      (:endgroup)
-                      (:startgroup)
-                      ("WRITING" .    ?w)
-                      ("CODE" .       ?c)
-                      ("SOCIAL" .     ?s)
-                      ("RESEARCH" .   ?r)
-                      ("INVESTMENT" . ?i)
-                      (:endgroup)))
+;; set the default org directory
+
+;; (setq org-directory "~/org/")
+
+;; add the files here
+;; (setq org-agenda-files
+;;       '("~/org/refile.org"
+;;         "~/org/personal/"
+;;         ;; work vs personal, uncomment/comment
+;;         ;; "~/Projects/brickabode/org-issues/201602.org"
+;;         ))
 
 (setq org-capture-templates
       '(("t" "todo" entry (file "~/org/refile.org")
@@ -96,3 +96,9 @@
 
 (add-to-list 'org-src-lang-modes '("dot" . graphviz-dot-mode))
 (setq org-ditaa-jar-path "/usr/share/java/ditaa/ditaa-0_9.jar")
+
+
+;;; subscripts
+
+(setq org-use-sub-superscripts '{})
+(setq org-export-with-sub-superscripts '{})
