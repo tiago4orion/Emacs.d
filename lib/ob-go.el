@@ -67,32 +67,24 @@ called by `org-babel-execute-src-block'"
                      body params processed-params))
          (coding-system-for-read 'utf-8) ;; use utf-8 with subprocesses
          (coding-system-for-write 'utf-8))
-    (org-babel-trim
-     (progn
-       (with-temp-file tmp-src-file (insert full-body))
-       (let ((results
+    (progn
+      (with-temp-file tmp-src-file (insert full-body))
+      (let ((results
+             (org-babel-trim
               (org-babel-eval
                (format "go run %s" (org-babel-process-file-name tmp-src-file))
-               "")))
-         (when results
-           (setq results (org-babel-trim (org-remove-indentation results)))
-           (org-babel-reassemble-table
-            (org-babel-result-cond (cdr (assoc :result-params params))
-              (org-babel-read results t)
-              (let ((tmp-file (org-babel-temp-file "go-")))
-                (with-temp-file tmp-file (insert results))
-                (org-babel-import-elisp-from-file tmp-file)))
-            (org-babel-pick-name
-             (cdr (assoc :colname-names params)) (cdr (assoc :colnames params)))
-            (org-babel-pick-name
-             (cdr (assoc :rowname-names params)) (cdr (assoc :rownames params))))))
-         ))))
-
-    ;; when forming a shell command, or a fragment of code in some
-    ;; other language, please preprocess any file names involved with
-    ;; the function `org-babel-process-file-name'. (See the way that
-    ;; function is used in the language files)
-
+               ""))))
+        (org-babel-reassemble-table
+         (org-babel-result-cond (cdr (assoc :result-params params))
+           (org-babel-read results)
+           (let ((tmp-file (org-babel-temp-file "go-")))
+             (with-temp-file tmp-file (insert results))
+             (org-babel-import-elisp-from-file tmp-file)))
+         (org-babel-pick-name
+          (cdr (assoc :colname-names params)) (cdr (assoc :colnames params)))
+         (org-babel-pick-name
+          (cdr (assoc :rowname-names params)) (cdr (assoc :rownames params))))))
+    ))
 
 ;; This function should be used to assign any variables in params in
 ;; the context of the session environment.
