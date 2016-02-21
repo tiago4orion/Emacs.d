@@ -50,6 +50,13 @@
     ocp-indent
     merlin
     utop
+
+    ;; Go
+    exec-path-from-shell
+    auto-complete
+    go-mode
+    go-autocomplete
+    go-scratch
     ;; accounting
     ledger-mode)
   "A list of packages to ensure are installed at launch.")
