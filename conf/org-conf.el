@@ -86,7 +86,7 @@
    (C    . t)
    (go . t)
    (makefile . t)
-   (sh . t)
+   (shell . t)
    (scheme . t)))
 
 ;;; disable confirmation of evaluation of code. CAREFUL WHEN EVALUATING

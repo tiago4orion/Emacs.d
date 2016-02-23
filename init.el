@@ -30,9 +30,11 @@
 (load "lisp-conf.el")
 (load "scheme-conf.el")
 (load "sql-conf.el")
+(load "docker-conf.el")
 (load "ob-go.el")
 (load "go-autocomplete.el")
 (load "go-conf.el")
+(load "crontab-mode.el")
 
 (setq custom-file (concat *my-conf* "custom.el"))
 (load custom-file 'noerror)
