@@ -86,8 +86,11 @@
    (C    . t)
    (go . t)
    (makefile . t)
-   (shell . t)
    (scheme . t)))
+
+(if (locate-library "ob-shell")         ; ob-sh renamed on 2013-12-13
+    (add-to-list 'org-babel-load-languages '(shell . t))
+  (add-to-list 'org-babel-load-languages '(sh . t)))
 
 ;;; disable confirmation of evaluation of code. CAREFUL WHEN EVALUATING
 ;;; FOREIGN ORG FILES!
