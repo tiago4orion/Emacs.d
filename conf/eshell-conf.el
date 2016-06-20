@@ -30,3 +30,12 @@ from http://www.howardism.org/Technical/Emacs/eshell-fun.html"
 (global-set-key (kbd "C-x !") 'eshell-here)
 
 (add-hook 'eshell-mode-hook (lambda () (company-mode 0)))
+
+(setq shell-switcher-mode t)
+
+(define-key shell-switcher-mode-map (kbd "C-'")
+            'shell-switcher-switch-buffer)
+(define-key shell-switcher-mode-map (kbd "C-x 4 '")
+            'shell-switcher-switch-buffer-other-window)
+(define-key shell-switcher-mode-map (kbd "C-M-'")
+            'shell-switcher-new-shell)

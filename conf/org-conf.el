@@ -19,15 +19,19 @@
 
 ;; set the default org directory
 
-;; (setq org-directory "~/org/")
+(setq org-directory "~/org/")
 
 ;; add the files here
-;; (setq org-agenda-files
-;;       '("~/org/refile.org"
-;;         "~/org/personal/"
-;;         ;; work vs personal, uncomment/comment
-;;         ;; "~/Projects/brickabode/org-issues/201602.org"
-;;         ))
+(setq org-agenda-files
+      '("~/org/refile.org"
+        "~/org/personal/"
+        "~/projects/go-workspace/src/github.com/NeowayLabs/dchan/todo_dchan.org"
+        "~/projects/go-workspace/src/github.com/NeowayLabs/wabbit/todo_wabbit.org"
+        "~/projects/go-workspace/src/github.com/tiago4orion/cnt/todo_cnt.org"
+        "~/projects/3rdparty/plan9port/todo_p9p.org"
+        ;; work vs personal, uncomment/comment
+        ;; "~/Projects/brickabode/org-issues/201602.org"
+        ))
 
 (setq org-capture-templates
       '(("t" "todo" entry (file "~/org/refile.org")
@@ -86,6 +90,7 @@
    (C    . t)
    (go . t)
    (makefile . t)
+   (shell . t)
    (scheme . t)))
 
 (if (locate-library "ob-shell")         ; ob-sh renamed on 2013-12-13
@@ -113,3 +118,14 @@
 
 (setq org-use-sub-superscripts '{})
 (setq org-export-with-sub-superscripts '{})
+
+;;; clock tables
+(setq org-clock-persist 'history)
+(org-clock-persistence-insinuate)
+
+;;; org-id
+(require 'org-id)
+(setq org-id-link-to-org-use-id 'use-existing)
+
+;; Update ID file on startup
+(org-id-update-id-locations)

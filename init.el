@@ -13,13 +13,19 @@
   "My configurations")
 (defvar *elpa-path* "~/.emacs.d/elpa/"
   "Elpa packages")
+(defvar *org-mode-path* "~/.emacs.d/lib/org-mode/lisp"
+  "Org Mode Git path")
 
 (add-to-list 'load-path *my-default-lib*)
 (add-to-list 'load-path *my-conf*)
+(add-to-list 'load-path *org-mode-path*)
+
+(add-to-list 'load-path "~/.emacs.d/lib/nash-mode.el")
 
 (load "backup.el")
 (load "package-manager.el")
 (load "elisp.el")
+(load "ob-go/ob-go.el")
 (load "org-conf.el")
 (load "misc.el")
 (load "keybindings.el")
@@ -31,10 +37,10 @@
 (load "scheme-conf.el")
 (load "sql-conf.el")
 (load "docker-conf.el")
-(load "ob-go.el")
 (load "go-autocomplete.el")
 (load "go-conf.el")
 (load "crontab-mode.el")
+(load "nash-conf.el")
 
 (setq custom-file (concat *my-conf* "custom.el"))
 (load custom-file 'noerror)
@@ -47,3 +53,5 @@
 (put 'narrow-to-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+
+(defalias 'calendar-absolute-from-iso 'calendar-iso-to-absolute)

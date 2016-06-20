@@ -57,6 +57,13 @@
     go-mode
     go-autocomplete
     go-scratch
+
+    ;; Org
+    ob-go
+
+    ;; eshell-switcher
+    shell-switcher
+
     ;; accounting
     ledger-mode)
   "A list of packages to ensure are installed at launch.")
