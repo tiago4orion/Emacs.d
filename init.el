@@ -20,8 +20,6 @@
 (add-to-list 'load-path *my-conf*)
 (add-to-list 'load-path *org-mode-path*)
 
-(add-to-list 'load-path "~/.emacs.d/lib/nash-mode.el")
-
 (load "backup.el")
 (load "package-manager.el")
 (load "elisp.el")
@@ -39,6 +37,7 @@
 (load "docker-conf.el")
 (load "go-autocomplete.el")
 (load "go-conf.el")
+(load "sml-conf.el")
 (load "crontab-mode.el")
 (load "nash-conf.el")
 
