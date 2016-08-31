@@ -7,14 +7,18 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
+(setq-local *go-version* "go1.5.3")
+(setq-local *gopath* (expand-file-name (format "~/.gvm/pkgsets/%s" *go-version*)))
+(setq-local *goroot* (expand-file-name (format "~/.gvm/gos/%s" *go-version*)))
 
-(setenv "GOPATH" (expand-file-name "~/projects/go-workspace"))
-(setenv "GOROOT" (expand-file-name "~/projects/personal/go"))
-(setenv "PATH" "/home/i4k/projects/go-workspace/bin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/i4k/projects/personal/go/bin")
+(setenv "GOPATH" *gopath*)
+(setenv "GOROOT" *goroot*)
 
-(setq exec-path (cons (expand-file-name "~/projects/personal/go") exec-path))
-(setq exec-path (cons (expand-file-name "~/projects/go-workspace/bin") exec-path))
-(add-to-list 'exec-path (expand-file-name "~/projects/go-workspace/src/github.com/nsf/gocode/bin"))
+(setenv "PATH" (format "%s/bin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:%s/bin" *gopath* *goroot*))
+
+(setq exec-path (cons *goroot* exec-path))
+(setq exec-path (cons (format "%s/bin" *gopath*) exec-path))
+(add-to-list 'exec-path (expand-file-name (format "%s/global/src/github.com/nsf/gocode/bin" *gopath*)))
 
 (defun my-go-mode-hook ()
   ; Use goimports instead of go-fmt

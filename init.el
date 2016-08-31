@@ -23,7 +23,6 @@
 (load "backup.el")
 (load "package-manager.el")
 (load "elisp.el")
-(load "ob-go/ob-go.el")
 (load "org-conf.el")
 (load "misc.el")
 (load "keybindings.el")
